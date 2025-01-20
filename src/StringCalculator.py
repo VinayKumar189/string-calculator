@@ -1,7 +1,7 @@
 
 
 class StringCalculator:
-    
+
     def add(self, string_numbers: str)->int:
         """
         add method to return sum of numbers given as a single string
@@ -13,6 +13,5 @@ class StringCalculator:
         Split string of numbers by commas and convert each value to an integer and store them in a list.
         Sum the list of numbers.
         """
-        list_of_numbers = [int(num) for num in string_numbers.split(",")]
-        sum_of_numbers = sum(list_of_numbers)
+        sum_of_numbers = sum([int(num) for num in string_numbers.split(",")])
         return sum_of_numbers

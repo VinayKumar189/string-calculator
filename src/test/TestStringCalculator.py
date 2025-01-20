@@ -26,7 +26,14 @@ class TestStringCalculator(unittest.TestCase):
         """
         Test for single number returns as is
         """
-        result = self.calculator.add("3, 7")
+        result = self.calculator.add("3,7")
         self.assertEqual(result, 10)
+
+    def test_add_multiple_numbers(self):
+        """
+        Test for single number returns as is
+        """
+        result = self.calculator.add("1,2,3,4,5,6,7,8,9,10")
+        self.assertEqual(result, 55)
 
     
