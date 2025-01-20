@@ -1,6 +1,7 @@
 
 
 class StringCalculator:
+    
     def add(self, string_numbers: str)->int:
         """
         add method to return sum of numbers given as a single string
