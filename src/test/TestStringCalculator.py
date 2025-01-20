@@ -17,23 +17,29 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_add_single_number(self):
         """
-        Test for single number returns as is
+        Test for single number to return the same number
         """
         result = self.calculator.add("3")
         self.assertEqual(result, 3)
 
     def test_add_two_numbers(self):
         """
-        Test for single number returns as is
+        Test for two numbers to return the sum
         """
         result = self.calculator.add("3,7")
         self.assertEqual(result, 10)
 
     def test_add_multiple_numbers(self):
         """
-        Test for single number returns as is
+        Test for multiple numbers to return the sum of all the numbers
         """
         result = self.calculator.add("1,2,3,4,5,6,7,8,9,10")
         self.assertEqual(result, 55)
 
+    def test_add_newlines_between_numbers(self):
+        """
+        Test for allowing newlines between numbers so that add method still returns the sum
+        """
+        result = self.calculator.add("1\n2\n3,4,10")
+        self.assertEqual(result, 20)
     
