@@ -6,8 +6,12 @@ class StringCalculator:
         """
         add method to return sum of numbers given as a single string
         """
+        # return 0 for empty string
         if not string_numbers:
             return 0
+
+        # replace newline character ("\n") with "," between numbers
+        string_numbers = string_numbers.replace("\n", ",")
 
         """
         Split string of numbers by commas and convert each value to an integer and store them in a list.
