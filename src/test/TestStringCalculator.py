@@ -14,3 +14,12 @@ class TestStringCalculator(unittest.TestCase):
         """
         result = self.calculator.add("")
         self.assertEqual(result, 0)
+
+    def test_add_single_number(self):
+        """
+        Test for single number returns as is
+        """
+        result = self.calculator.add("3")
+        self.assertEqual(result, 3)
+
+    
