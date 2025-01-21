@@ -1,5 +1,3 @@
-
-
 class StringCalculator:
 
     def add(self, string_numbers: str)->int:
