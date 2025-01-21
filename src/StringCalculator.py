@@ -1,3 +1,5 @@
+import re
+
 class StringCalculator:
     def __init__(self):
         self.count = 0
@@ -19,13 +21,17 @@ class StringCalculator:
         """
         if string_numbers.startswith("//"):
             newline_index = string_numbers.index("\n")
-            delimiter = string_numbers[2:newline_index]
+            delimiter_substring = string_numbers[2:newline_index]
 
-            if delimiter.startswith("[") and delimiter.endswith("]"):
-                delimiter = delimiter[1:-1]
-                  
             string_numbers = string_numbers[newline_index+1:]
-            string_numbers = string_numbers.replace(delimiter, ",")
+
+            if delimiter_substring.startswith("["):
+                delimiters = re.findall(r'\[([^\]]+)\]', delimiter_substring)
+                for delimiter in delimiters:
+                    string_numbers = string_numbers.replace(delimiter, ",")
+            else:
+                string_numbers = string_numbers.replace(delimiter_substring, ",")
+            
 
         # replace newline character ("\n") with "," between numbers
         string_numbers = string_numbers.replace("\n", ",")
