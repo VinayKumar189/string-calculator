@@ -1,4 +1,6 @@
 class StringCalculator:
+    def __init__(self):
+        self.count = 0
 
     def add(self, string_numbers: str)->int:
         """
@@ -6,6 +8,7 @@ class StringCalculator:
         """
         # return 0 for empty string
         if not string_numbers:
+            self.count+=1
             return 0
 
         """
@@ -31,6 +34,7 @@ class StringCalculator:
                 continue
 
         if len(negative_numbers) > 0:
+            self.count+=1
             raise ValueError(f"negative numbers not allowed: {', '.join(negative_numbers)}")
 
         """
@@ -38,7 +42,8 @@ class StringCalculator:
         Sum the list of numbers.
         """
         sum_of_numbers = sum([int(num) for num in string_numbers.split(",")])
+        self.count+=1
         return sum_of_numbers
     
     def GetCalledCount(self):
-        pass
+        return self.count

@@ -62,8 +62,8 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(exception_msg, "negative numbers not allowed: -3, -10")
 
     def test_GetCalledCount(self):
-        call_1 = self.calculator.add("3,4")
-        call_2 = self.calculator.add("3,4,10")
+        self.calculator.add("3,4")
+        self.calculator.add("3,4,10")
         result = self.calculator.GetCalledCount()
         self.assertEqual(result, 2)
     
