@@ -56,8 +56,8 @@ class TestStringCalculator(unittest.TestCase):
         when passed with a negative number
         """
         with self.assertRaises(ValueError) as error:
-            self.calculator.add("1,2,-3,4,10")
+            self.calculator.add("1,2,-3,4,-10")
         
         exception_msg = str(error.exception)
-        self.assertEqual(exception_msg, "negative numbers not allowed: -3")
+        self.assertEqual(exception_msg, "negative numbers not allowed: -3, -10")
     
