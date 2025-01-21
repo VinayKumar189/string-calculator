@@ -76,4 +76,11 @@ class TestStringCalculator(unittest.TestCase):
         """
         result = self.calculator.add("1,2,3,1001,10,1020,20")
         self.assertEqual(result, 36)
+
+    def test_add_delimiter_of_any_length(self):
+        """
+        Test for add method to handle delimiter of any length with format "//[***]\n1***2***3"
+        """
+        result = self.calculator.add("//[***]\n1***2***3***4***10")
+        self.assertEqual(result, 20)
     
