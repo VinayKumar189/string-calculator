@@ -29,7 +29,7 @@ class StringCalculator:
         negative_numbers = []
         for num in string_numbers.split(","):
             if int(num) < 0:
-                negative_numbers.append(str(num))
+                negative_numbers.append(num)
             else:
                 continue
 
@@ -41,7 +41,7 @@ class StringCalculator:
         Split string of numbers by commas and convert each value to an integer and store them in a list.
         Sum the list of numbers.
         """
-        sum_of_numbers = sum([int(num) for num in string_numbers.split(",")])
+        sum_of_numbers = sum([0 if int(num) > 1000 else int(num) for num in string_numbers.split(",")])
         self.count+=1
         return sum_of_numbers
     
