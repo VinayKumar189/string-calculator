@@ -62,8 +62,18 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(exception_msg, "negative numbers not allowed: -3, -10")
 
     def test_GetCalledCount(self):
+        """
+        Test for GetCalledCount to return number of times the add method is invoked
+        """
         self.calculator.add("3,4")
         self.calculator.add("3,4,10")
         result = self.calculator.GetCalledCount()
         self.assertEqual(result, 2)
+
+    def test_add_ignore_numbers_greater_than_1000(self):
+        """
+        Test for add method to ignore numbers greater than 1000 and sum the remaining numbers
+        """
+        result = self.calculator.add("1,2,3,1001,10,1020,20")
+        self.assertEqual(result, 36)
     
