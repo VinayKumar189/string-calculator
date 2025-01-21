@@ -38,8 +38,15 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_add_newlines_between_numbers(self):
         """
-        Test for allowing newlines between numbers so that add method still returns the sum
+        Test for allowing add method to handle newlines between numbers
         """
         result = self.calculator.add("1\n2\n3,4,10")
+        self.assertEqual(result, 20)
+
+    def test_add_change_of_delimiter(self):
+        """
+        Test for allowing add method to handle change of default delimiter between numbers
+        """
+        result = self.calculator.add("//;\n1;2;3;4;10")
         self.assertEqual(result, 20)
     

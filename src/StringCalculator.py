@@ -4,11 +4,12 @@ class StringCalculator:
 
     def add(self, string_numbers: str)->int:
         """
-        add method to return sum of numbers given as a single string
+        add method to return sum of numbers given input of string of numbers
         """
         # return 0 for empty string
         if not string_numbers:
             return 0
+
 
         # replace newline character ("\n") with "," between numbers
         string_numbers = string_numbers.replace("\n", ",")
