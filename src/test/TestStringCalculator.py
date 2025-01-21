@@ -49,4 +49,11 @@ class TestStringCalculator(unittest.TestCase):
         """
         result = self.calculator.add("//;\n1;2;3;4;10")
         self.assertEqual(result, 20)
+
+    def test_add_for_negative_numbers(self):
+        """
+        Test for add method to raise an exception with a message "negative numbers not allowed <negative number>"
+        when passed with a negative number
+        """
+        self.assertRaises(ValueError, self.calculator.add, "1,2,-3,4,10")
     
