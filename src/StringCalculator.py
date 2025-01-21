@@ -31,7 +31,6 @@ class StringCalculator:
                     string_numbers = string_numbers.replace(delimiter, ",")
             else:
                 string_numbers = string_numbers.replace(delimiter_substring, ",")
-            
 
         # replace newline character ("\n") with "," between numbers
         string_numbers = string_numbers.replace("\n", ",")
