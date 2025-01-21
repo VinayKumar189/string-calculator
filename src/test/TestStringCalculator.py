@@ -55,5 +55,9 @@ class TestStringCalculator(unittest.TestCase):
         Test for add method to raise an exception with a message "negative numbers not allowed <negative number>"
         when passed with a negative number
         """
-        self.assertRaises(ValueError, self.calculator.add, "1,2,-3,4,10")
+        with self.assertRaises(ValueError) as error:
+            self.calculator.add("1,2,-3,4,10")
+        
+        exception_msg = str(error.exception)
+        self.assertEqual(exception_msg, "negative numbers not allowed: -3")
     
