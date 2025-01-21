@@ -83,4 +83,10 @@ class TestStringCalculator(unittest.TestCase):
         """
         result = self.calculator.add("//[***]\n1***2***3***4***10")
         self.assertEqual(result, 20)
-    
+
+    def test_add_multiple_delimiter(self):
+        """
+        Test for add method to handle mutliple delimiter with format "//[*][%]\n1*2%3"
+        """
+        result = self.calculator.add("//[*][%]\n1*2%3*4%10")
+        self.assertEqual(result, 20)
