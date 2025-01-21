@@ -19,7 +19,11 @@ class StringCalculator:
         """
         if string_numbers.startswith("//"):
             newline_index = string_numbers.index("\n")
-            delimiter = string_numbers[newline_index-1]
+            delimiter = string_numbers[2:newline_index]
+
+            if delimiter.startswith("[") and delimiter.endswith("]"):
+                delimiter = delimiter[1:-1]
+                  
             string_numbers = string_numbers[newline_index+1:]
             string_numbers = string_numbers.replace(delimiter, ",")
 
