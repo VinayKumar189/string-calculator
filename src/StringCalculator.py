@@ -10,6 +10,17 @@ class StringCalculator:
         if not string_numbers:
             return 0
 
+        """
+        Change of delimiter has a pattern of "//[delimiter]\n1[numbers..]"
+        For ex: “//;\n1;2” == 3.
+        Check if given string starts with "//" and find first newline character index to seperate numbers
+        and delimiter."
+        """
+        if string_numbers.startswith("//"):
+            newline_index = string_numbers.index("\n")
+            delimiter = string_numbers[newline_index-1]
+            string_numbers = string_numbers[newline_index+1:]
+            string_numbers = string_numbers.replace(delimiter, ",")
 
         # replace newline character ("\n") with "," between numbers
         string_numbers = string_numbers.replace("\n", ",")
