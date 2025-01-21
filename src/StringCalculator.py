@@ -25,12 +25,16 @@ class StringCalculator:
         # replace newline character ("\n") with "," between numbers
         string_numbers = string_numbers.replace("\n", ",")
 
+        negative_numbers = []
         for num in string_numbers.split(","):
             if int(num) < 0:
-                raise ValueError("negative numbers not allowed: " + str(num))
+                negative_numbers.append(str(num))
             else:
                 continue
-            
+
+        if len(negative_numbers) > 0:
+            raise ValueError(f"negative numbers not allowed: {', '.join(negative_numbers)}")
+
         """
         Split string of numbers by commas and convert each value to an integer and store them in a list.
         Sum the list of numbers.
