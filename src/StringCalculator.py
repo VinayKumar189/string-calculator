@@ -39,3 +39,6 @@ class StringCalculator:
         """
         sum_of_numbers = sum([int(num) for num in string_numbers.split(",")])
         return sum_of_numbers
+    
+    def GetCalledCount(self):
+        pass
